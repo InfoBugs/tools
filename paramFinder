@@ -1,0 +1,19 @@
+# !/bin/bash
+
+echo "1) Single Target "
+echo "2) Option 2 "
+echo -n "Enter you choise: "
+read choices
+case "$choices" in
+1) 
+echo "Enter your target : "
+read domain
+echo"$domain" | waybackurls -no-subs | grep '=' | tee "$domain.txt" 
+;;
+2)
+echo "hello2"
+;;
+*)
+echo "Invalid Choice"
+;;
+esac
